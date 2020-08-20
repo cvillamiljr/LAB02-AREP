@@ -46,22 +46,7 @@ public class SparkWeb {
     }
 
     private static String resultsPage(Request req, Response res) throws Exception {
-        String request = req.queryParams("fdata");
-        String[] data = request.split(",");
-        Calculadora calculadora = new Calculadora(data);
-
-        String pagina;
-        pagina = "<DOCTYPE html"
-                + "<html>"
-                + "<title> Web Calculator</title>"
-                + "<body>"
-                + "<h1>Results</h1>"
-                + "<h3>Data set : " + request + "</h3>"
-                + "<h3>Mean : " + calculadora.media() + "</h3>"
-                + "<h3>Standard deviation : " + calculadora.desviacion() + "</h3>"
-                + "</body>"
-                + "</html>";
-        return pagina;
+        return req.queryParams("fdata");
     }
 
     /**

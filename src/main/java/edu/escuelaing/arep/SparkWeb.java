@@ -23,28 +23,45 @@ public class SparkWeb {
 
     private static String inputDataPage(Request req, Response res) {
         String pageContent
-                = "<!DOCTYPE html>"
+                = "<DOCTYPE html"
                 + "<html>"
+                + "<title> Web Calculator</title>"
                 + "<body>"
-                + "<h2>HTML Forms</h2>"
-                + "<form action=\"/results\">"
-                + "  First name:<br>"
-                + "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">"
-                + "  <br>"
-                + "  Last name:<br>"
-                + "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">"
-                + "  <br><br>"
-                + "  <input type=\"submit\" value=\"Submit\">"
+                + "<h1>Statistical calculator</h1>"
+                + "<form action=\"/submit\">"
+                + "<p>This calculator has the operations of mean and standard deviation.</p>"
+                + "<p>Please follow the next recommendations  to get the most out of this tool:</p>"
+                + "<ol>"
+                + "<li>Type the numbers separated by commas</li>"
+                + "<li>If you are using real numbers, separate the natural part and the fractional part with a period (.)</li>"
+                + "</ol>"
+                + "<br></br>"
+                + "<label for=\"fdata\">Data set:</label>"
+                + "<input type=\"text\" id=\"fdata\" name=\"fdata\"><br><br>"
+                + "<input type=\"submit\" value=\"Submit\">"
                 + "</form>"
-                + "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/results\".</p>"
                 + "</body>"
                 + "</html>";
         return pageContent;
     }
 
-    private static String resultsPage(Request req, Response res) {
-        return req.queryParams("firstname") + " " +
-                req.queryParams("lastname");
+    private static String resultsPage(Request req, Response res) throws Exception {
+        String request = req.queryParams("fdata");
+        String[] data = request.split(",");
+        Calculadora calculadora = new Calculadora(data);
+
+        String pagina;
+        pagina = "<DOCTYPE html"
+                + "<html>"
+                + "<title> Web Calculator</title>"
+                + "<body>"
+                + "<h1>Results</h1>"
+                + "<h3>Data set : " + request + "</h3>"
+                + "<h3>Mean : " + calculadora.media() + "</h3>"
+                + "<h3>Standard deviation : " + calculadora.desviacion() + "</h3>"
+                + "</body>"
+                + "</html>";
+        return pagina;
     }
 
     /**

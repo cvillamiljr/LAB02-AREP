@@ -24,7 +24,7 @@ Para poder instalar el programa debe clonar el repositorio en su maquina local, 
 en la linea de comandos:
 
 ```
-https://github.com/cvillamiljr/AREP.git
+https://github.com/cvillamiljr/LAB02-AREP.git
 ```
 ### Ejecución
 - Previo a la ejecución del proyecto debe empaquetar el proyecto.
@@ -35,9 +35,15 @@ mvn package
 ```
 - Ya que el proyecto esta empaquetado, proceda a ejecutar el proyecto usando el siguiente comando:
 ```
-java -cp target/linkedList-1.0-SNAPSHOT.jar edu.escuelaing.arem.ASE.app.App
+java -cp target/SparkWeb-1.0-SNAPSHOT.jar edu.escuelaing.arep.SparkWeb
 ```
 Nota: Recuerde que -cp hace referencia al classpath de la clase que se va a ejecutar, en este caso es la clase App.
+
+- Es importante mencionar que para poder acceder a la visualiazación de la applicación debemos hacerlo de la siguiente manera:
+```
+localhost:4567
+```
+- De esta forma podremos ver el funcionamiento de nuestra aplicación de manera local sin necesidad de usar una herramienta de despliegue.
 
 ## Ejecución de pruebas
 
@@ -50,8 +56,10 @@ mvn test
 ## Construido con
 
 Este proyecto se llevo a cabo con la ayuda de las siguientes herramientas:
+- [Spark](http://sparkjava.com/) : Spark - Un micro framework para crear aplicaciones web en Kotlin y Java 8 con el mínimo esfuerzo
 - [Maven](https://maven.apache.org/) : Herramienta para la creacion de la estructura del proyecto y el manejo de las dependencias en el mismo.
 - [Git](https://git-scm.com/) : Sistema distribuido de manejo de versiones que usaremos tanto en este taller como en lo que resta del curso
+- [Heroku](https://dashboard.heroku.com/apps) : Herramienta para realizar despliegues continuos [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://sheltered-retreat-04173.herokuapp.com)
 
 ## Author 
 

@@ -17,7 +17,7 @@ public class SparkWeb {
      */
     public static void main(String[] args) {
         port(getPort());
-        get("/inputdata", (req, res) -> inputDataPage(req, res));
+        get("/", (req, res) -> inputDataPage(req, res));
         get("/results", (req, res) -> resultsPage(req, res));
     }
 
@@ -56,7 +56,7 @@ public class SparkWeb {
                 + "<h3>Media Muestral :</h3>"
                 + "<h3>"+ calculadora.media() + "</h3>"
                 + "<h3>Desviación Estandar muestral : </h3>"
-                + "<h3"  + calculadora.desviacion() + "</h3>"
+                + "<h3>"  + calculadora.desviacion() + "</h3>"
                 + "<p> Gracias por utilizar nuestra calculadora.<p/>"
                 + "</body>"
                 + "</html>";

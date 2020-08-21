@@ -70,6 +70,7 @@ Este proyecto se llevo a cabo con la ayuda de las siguientes herramientas:
 - [Maven](https://maven.apache.org/) : Herramienta para la creacion de la estructura del proyecto y el manejo de las dependencias en el mismo.
 - [Git](https://git-scm.com/) : Sistema distribuido de manejo de versiones que usaremos tanto en este taller como en lo que resta del curso
 - [Heroku](https://dashboard.heroku.com/apps) : Herramienta para realizar despliegues continuos [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://sheltered-retreat-04173.herokuapp.com)
+- [CircleCi](https://circleci.com/) : Herramienta para realizar integracion continua [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/cvillamiljr/LAB02-AREP)
 
 ## Author 
 

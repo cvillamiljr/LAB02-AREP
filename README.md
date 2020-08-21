@@ -37,13 +37,23 @@ mvn package
 ```
 java -cp target/SparkWeb-1.0-SNAPSHOT.jar edu.escuelaing.arep.SparkWeb
 ```
-Nota: Recuerde que -cp hace referencia al classpath de la clase que se va a ejecutar, en este caso es la clase App.
+Nota: Recuerde que -cp hace referencia al classpath de la clase que se va a ejecutar, en este caso es la clase SparkWeb.
 
 - Es importante mencionar que para poder acceder a la visualiazación de la applicación debemos hacerlo de la siguiente manera:
 ```
 localhost:4567
 ```
 - De esta forma podremos ver el funcionamiento de nuestra aplicación de manera local sin necesidad de usar una herramienta de despliegue.
+
+Los resultados que obtendrá seran los siguientes:
+
+- Pagina donde se debe ingresar la muestra:
+
+![](img/Input.png)
+
+- Pagina de los resultados luego de realizar las operaciones:
+
+![](img/resultados.png)
 
 ## Ejecución de pruebas
 

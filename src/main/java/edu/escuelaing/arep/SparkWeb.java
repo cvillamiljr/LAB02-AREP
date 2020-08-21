@@ -23,16 +23,18 @@ public class SparkWeb {
 
     private static String inputDataPage(Request req, Response res) {
         String pageContent
-                = "<DOCTYPE html"
+                = "<!DOCTYPE html>"
                 + "<html>"
                 + "<title> Calculadora</title>"
                 + "<body>"
-                + "<h1>Calculadora</h1>"
-                + "<form action=\"/submit\">"
+                + "<h1>Calculadora Web</h1>"
+                + "<form action=\"/results\">"
+                + "<p>Calculadora de Desviación estandar y media de una muestra dada.</p>"
                 + "<br></br>"
-                + "<label for=\"fdata\">Data set:</label>"
-                + "<input type=\"text\" id=\"fdata\" name=\"fdata\"><br><br>"
-                + "<input type=\"submit\" value=\"Submit\">"
+                + "<label for=\"fdata\">Ecribe los datos separados por comas:</label><br>"
+                + "<input type=\"text\" id=\"Datos\" name=\"Datos\"><br><br>"
+                + "<input type=\"submit\" value=\"Calcular\">"
+                + "<p>Si quieres saber la desviación estandar y media de la muestra que ingresaste presiona Calcular.</p>"
                 + "</form>"
                 + "</body>"
                 + "</html>";
@@ -40,8 +42,25 @@ public class SparkWeb {
     }
 
     private static String resultsPage(Request req, Response res) throws Exception {
-        return req.queryParams("fdata");
-    }
+        String request = req.queryParams("Datos");
+        String[] data = request.split(",");
+        Calculadora calculadora = new Calculadora(data);
+        String pagina;
+        pagina = "<DOCTYPE html"
+                + "<html>"
+                + "<title> Resultados</title>"
+                + "<body>"
+                + "<h1>Resultados</h1>"
+                + "<h3>Muestra :</h3>"
+                + "<h3>"+ request +"</h3>"
+                + "<h3>Media Muestral :</h3>"
+                + "<h3>"+ calculadora.media() + "</h3>"
+                + "<h3>Desviación Estandar muestral : </h3>"
+                + "<h3"  + calculadora.desviacion() + "</h3>"
+                + "<p> Gracias por utilizar nuestra calculadora.<p/>"
+                + "</body>"
+                + "</html>";
+        return pagina;    }
 
     /**
      * This method reads the default port as specified by the PORT variable in
